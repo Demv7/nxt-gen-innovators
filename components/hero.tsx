@@ -28,9 +28,9 @@ export function Hero() {
           Become a startup founder before college. Real world learning through Real world projects/start-ups! Students transforming ideas into impact through real-world startup experience.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-primary text-primary-foreground px-8 py-4 font-semibold rounded hover:opacity-90 transition-opacity text-lg">
+          <a href="/apply.html" className="bg-primary text-primary-foreground px-8 py-4 font-semibold rounded hover:opacity-90 transition-opacity text-lg inline-block text-center">
             Apply Now
-          </button>
+          </a>
           <button className="border-2 border-primary text-primary px-8 py-4 font-semibold rounded hover:bg-primary hover:text-primary-foreground transition-colors text-lg">
             Learn More
           </button>
