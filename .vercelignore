@@ -1,0 +1,11 @@
+.venv
+node_modules
+.git
+.env
+__pycache__
+.next
+dist
+build
+*.zip
+*.pdf
+public/assets/**/*

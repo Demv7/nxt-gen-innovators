@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Apply — NxtGen Innovators</title>
+  <meta name="description" content="Apply to NxtGen Innovators programs" />
+  <style>
+    :root{--bg1:#FF7A8A;--bg2:#6A82FB;--card:#ffffff;--muted:#6b7280;--accent:#7c3aed}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#0f172a}
+    .bg-gradient{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);padding:32px}
+    .card{width:100%;max-width:920px;background:linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,255,255,0.9));border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.2);display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+    .panel{padding:36px}
+    .left{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.02));display:flex;flex-direction:column;gap:12px;align-items:flex-start;justify-content:center}
+    h1{margin:0;font-size:26px;line-height:1.05;color:#0f172a}
+    p.lead{margin:0;color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;background:linear-gradient(90deg,#ffd6a5,#feb2b2);border-radius:999px;font-weight:600;color:#111}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-size:13px;color:#0f172a;font-weight:600}
+    input[type=text],input[type=email],input[type=tel],input[type=number],select,textarea{width:100%;padding:12px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.08);background:rgba(255,255,255,0.9);outline:none;font-size:15px}
+    textarea{min-height:120px;resize:vertical}
+    .row{display:flex;gap:12px}
+    .col{flex:1}
+    .muted{font-size:13px;color:var(--muted)}
+    .actions{display:flex;gap:12px;align-items:center}
+    .btn{background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;padding:12px 16px;border-radius:10px;border:none;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+    .btn[disabled]{opacity:0.6;cursor:not-allowed}
+    .ghost{background:transparent;color:#0f172a;border:1px solid rgba(15,23,42,0.06);padding:10px 14px;border-radius:10px}
+    .success{padding:12px;border-radius:10px;background:linear-gradient(90deg,#bbf7d0,#bef264);color:#06311a;font-weight:700}
+    .error{padding:12px;border-radius:10px;background:linear-gradient(90deg,#fecaca,#fda4af);color:#7f1d1d;font-weight:700}
+    .foot{font-size:13px;color:var(--muted);margin-top:6px}
+    @media (max-width:900px){.card{grid-template-columns:1fr;max-width:720px}.left{padding:26px}.panel{padding:20px}}
+    /* subtle hover lift for card */
+    .card:hover{transform:translateY(-6px);transition:transform 260ms cubic-bezier(.2,.9,.3,1)}
+    .field-help{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main class="bg-gradient">
+    <section class="card" role="region" aria-labelledby="apply-heading">
+      <div class="panel left">
+        <span class="badge">Apply Now</span>
+        <h1 id="apply-heading">Join NxtGen Innovators</h1>
+        <p class="lead">Select your program and tell us why you'd like to join. Shortlisting happens fast — be concise and honest.</p>
+        <p class="foot">Programs available for ages 13+. We respect privacy — your details are stored securely in our application spreadsheet.</p>
+      </div>
+
+      <div class="panel">
+        <form id="apply-form" novalidate>
+          <!-- Full name -->
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your full name" />
+          </div>
+
+          <!-- Email and Phone -->
+          <div class="row">
+            <div class="col">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div class="col">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" required placeholder="+91 98765 43210" />
+            </div>
+          </div>
+
+          <!-- Age and City -->
+          <div class="row">
+            <div class="col">
+              <label for="age">Age</label>
+              <input id="age" name="age" type="number" min="10" max="120" required placeholder="18" />
+            </div>
+            <div class="col">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" required placeholder="City" />
+            </div>
+          </div>
+
+          <!-- Program -->
+          <div>
+            <label for="program">Program Interested In</label>
+            <select id="program" name="program" required>
+              <option value="">Choose a program...</option>
+              <option>Startup & Entrepreneurship</option>
+              <option>Coding & AI</option>
+              <option>Innovation & Design</option>
+              <option>Leadership & Communication</option>
+            </select>
+          </div>
+
+          <!-- Motivation -->
+          <div>
+            <label for="motivation">Why do you want to join?</label>
+            <textarea id="motivation" name="motivation" placeholder="Tell us in 1-3 sentences" required></textarea>
+            <div class="field-help">Be specific — mentors read this.</div>
+          </div>
+
+          <div class="actions">
+            <button id="submit-btn" class="btn" type="submit">Submit Application</button>
+            <button id="reset-btn" type="button" class="ghost">Reset</button>
+          </div>
+
+          <div id="message" aria-live="polite" style="margin-top:12px"></div>
+
+          <p class="foot" style="margin-top:8px">After submission you'll see a confirmation. We may contact shortlisted candidates by email or phone.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <iframe id="hidden_iframe" name="hidden_iframe" style="display:none"></iframe>
+
+  <script>
+    // FRONTEND: sends JSON to Google Apps Script Web App URL
+    // Web App exec URL (deployed Apps Script). Replace if you redeploy to a different URL.
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbympEMTwIEGiCO5-ipFomOrxZ0q7hPCnaCmU_gB7iVRo_GwmgRPEwZ6zJSWmx_IjVkOWQ/exec';
+
+    const form = document.getElementById('apply-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const messageEl = document.getElementById('message');
+
+    function showMessage(type, text){
+      messageEl.innerHTML = '';
+      const div = document.createElement('div');
+      div.className = type === 'success' ? 'success' : 'error';
+      div.textContent = text;
+      messageEl.appendChild(div);
+    }
+
+    // Submit via classic form POST into a hidden iframe to avoid CORS issues with fetch.
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      messageEl.innerHTML = '';
+
+      // Basic client-side validation
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (!WEB_APP_URL || WEB_APP_URL.includes('REPLACE_WITH_YOUR_WEB_APP_URL')) {
+        showMessage('error', 'Web App URL not configured. Edit apply.html and set WEB_APP_URL.');
+        return;
+      }
+
+      // Disable submit and show loading state
+      submitBtn.disabled = true;
+      const originalLabel = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+
+      // Configure the form to POST to the Apps Script endpoint into a hidden iframe
+      form.action = WEB_APP_URL;
+      form.method = 'POST';
+      form.target = 'hidden_iframe';
+
+      const iframe = document.getElementById('hidden_iframe');
+      let handled = false;
+
+      const onLoad = () => {
+        if (handled) return;
+        handled = true;
+        showMessage('success', 'Registration submitted successfully');
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        iframe.removeEventListener('load', onLoad);
+      };
+
+      // Timeout in case the iframe never loads (network error)
+      const timeout = setTimeout(() => {
+        if (handled) return;
+        handled = true;
+        showMessage('error', 'Submission timed out. Please try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        iframe.removeEventListener('load', onLoad);
+      }, 15000);
+
+      iframe.addEventListener('load', onLoad);
+
+      // Submit the form (this performs a normal POST, bypassing CORS restrictions)
+      form.submit();
+    });
+
+    resetBtn.addEventListener('click', () => { form.reset(); messageEl.innerHTML = ''; });
+  </script>
+</body>
+</html>
