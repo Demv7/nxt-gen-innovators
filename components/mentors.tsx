@@ -5,31 +5,6 @@ const mentors = [
     name: 'Ashish Patel',
     title: 'Entrepreneur, Clinical Researcher',
     company: 'Healthcare Innovation Ventures'
-  },
-  {
-    name: 'Dev Brahmbhatt',
-    title: 'Tech CEO',
-    company: 'Karnavati University'
-  },
-  {
-    name: 'Elena Rodriguez',
-    title: 'Product Designer',
-    company: 'Design Studio'
-  },
-  {
-    name: 'Arun Patel',
-    title: 'Business Mentor',
-    company: 'Venture Partner'
-  },
-  {
-    name: 'Lisa Zhang',
-    title: 'Marketing Expert',
-    company: 'Growth Co.'
-  },
-  {
-    name: 'James Wilson',
-    title: 'VC Investor',
-    company: 'Innovation Fund'
   }
 ]
 
